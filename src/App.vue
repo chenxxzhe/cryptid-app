@@ -1,30 +1,23 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import Player from './views/PlayerViews.vue'
+import { register } from 'swiper/element/bundle'
+register()
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <swiper-container navigation="true">
+    <swiper-slide><Player /></swiper-slide>
+    <swiper-slide><Player /></swiper-slide>
+    <swiper-slide><Player /></swiper-slide>
+    <swiper-slide><Player /></swiper-slide>
+  </swiper-container>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<style>
+swiper-container::part(button-prev) {
+  position: fixed;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+swiper-container::part(button-next) {
+  position: fixed;
 }
 </style>
