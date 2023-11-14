@@ -16,12 +16,7 @@ watch(
   () => props.items,
   (newVal) => {
     // 增加不在XX的选项
-    list.value = newVal
-      .reduce((arr, item) => {
-        const negativeItem = { ...item, text: '>' + item.text[1] }
-        return arr.concat([item, negativeItem])
-      }, [] as Item[])
-      .map((item) => ({ ...item, active: true }))
+    list.value = newVal.map((item) => ({ ...item, active: true }))
   },
   { immediate: true },
 )
